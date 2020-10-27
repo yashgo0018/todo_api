@@ -20,5 +20,5 @@ from api.views import TodoCreateList, TodoDetail
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('todos/', TodoCreateList.as_view()),
-    path('todos/<id>', TodoDetail.as_view()),
+    path('todos/<id>/', TodoDetail.as_view()),
 ]

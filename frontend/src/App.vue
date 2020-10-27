@@ -1,32 +1,40 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <router-link class="navbar-brand" to="/">Todo Manager</router-link>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      <router-view />
     </div>
-    <router-view/>
+    <router-link
+      to="/create"
+      class="float"
+      data-toggle="tooltip"
+      data-placement="left"
+      title="Create Todo"
+    >
+      <i class="fa fa-plus my-float"></i>
+    </router-link>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #2c3e50;
+  color: #fff;
+  border-radius: 50px;
   text-align: center;
-  color: #2c3e50;
+  box-shadow: 2px 2px 3px #999;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.my-float {
+  margin-top: 22px;
 }
 </style>
